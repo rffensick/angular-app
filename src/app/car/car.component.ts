@@ -6,14 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./car.component.scss']
 })
 export class CarComponent {
-  carName = 'Ford';
   carYear = 2015;
+  cars = ['BMW', 'FORD', 'Audi'];
 
-  getName() {
-    return this.carName;
-  }
+  carName = '';
+  checkCar = false;
 
-  getYear() {
-    return this.carYear;
+  addCar() {
+    this.checkCar = !this.checkCar;
+    this.cars.push(this.carName);
+    this.carName = '';
   }
 }
