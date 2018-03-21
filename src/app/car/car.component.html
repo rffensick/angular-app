@@ -1,13 +1,1 @@
-<input type="text" [(ngModel)]="carName" class="form-control">
-<button (click)="addCar()" class="btn btn-primary">Добавить машину</button>
-<ng-container *ngIf="!checkCar; else elseTemplate">
-	<p>Машина не добавлена</p>
-</ng-container>
-<ng-template #elseTemplate>
-	<p class="success">Машина добавлена</p>
-</ng-template>
-
-<hr>
-<ul>
-	<li *ngFor="let car of cars">{{car}}</li>
-</ul>
+<p>Название: {{carName}}, Год: {{carYear}}</p>

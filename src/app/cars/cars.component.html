@@ -1,3 +1,20 @@
-<app-car>
-</app-car>
+<input type="text" [(ngModel)]="carName" class="form-control">
+<button (click)="addCar()" class="btn btn-primary">Добавить машину</button>
+<ng-container *ngIf="!checkCar; else elseTemplate">
+	<p>Машина не добавлена</p>
+</ng-container>
+<ng-template #elseTemplate>
+	<p class="success">Машина добавлена</p>
+</ng-template>
+
+<app-car *ngFor="let car of cars"></app-car>
+
+<ul>
+	<li *ngFor="let item of items; let index = index">
+		<b>{{item.id}}</b> =>
+		<i> {{item.name}} </i> =
+		<b> {{index}} </b>
+	</li>
+</ul>
+
 <hr>

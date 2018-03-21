@@ -7,14 +7,5 @@ import { Component } from '@angular/core';
 })
 export class CarComponent {
   carYear = 2015;
-  cars = ['BMW', 'FORD', 'Audi'];
-
-  carName = '';
-  checkCar = false;
-
-  addCar() {
-    this.checkCar = !this.checkCar;
-    this.cars.push(this.carName);
-    this.carName = '';
-  }
+  carName = 'FORD';
 }
