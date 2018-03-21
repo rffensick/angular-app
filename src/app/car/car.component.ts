@@ -12,4 +12,8 @@ export class CarComponent {
   getName() {
     return this.carName;
   }
+
+  getYear() {
+    return this.carYear;
+  }
 }
