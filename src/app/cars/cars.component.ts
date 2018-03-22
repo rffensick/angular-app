@@ -24,4 +24,12 @@ export class CarsComponent {
   updateCarList(car: { name: string; year: number }) {
     this.cars.push(car);
   }
+
+  updateCar() {
+    return (this.cars[0].name = 'Eduard');
+  }
+
+  deleteCar() {
+    return this.cars.splice(0, 1);
+  }
 }

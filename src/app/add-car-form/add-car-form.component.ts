@@ -13,5 +13,7 @@ export class AddCarFormComponent {
 
   addCar() {
     this.onAddCar.emit({ name: this.carName, year: this.carYear });
+    this.carName = '';
+    this.carYear = null;
   }
 }

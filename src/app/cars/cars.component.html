@@ -1,10 +1,15 @@
 <app-add-car-form (onAddCar)="updateCarList($event)"></app-add-car-form>
 
-<ng-container *ngIf="!checkCar; else elseTemplate">
-	<p>Машина не добавлена</p>
-</ng-container>
-<ng-template #elseTemplate>
-	<p class="success">Машина добавлена</p>
-</ng-template>
+<hr>
 
-<app-car *ngFor="let car of cars" [carItem]="car"></app-car>
+<button (click)="updateCar()" class="btn btn-success">Изменить машину</button>
+<button (click)="deleteCar()" class="btn btn-danger">Удалить Машину 1</button>
+
+<hr>
+
+<div class="list-group">
+  <app-car [name]="car.name" class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+    <h4 appDirective #carHeading class="list-group-item-heading">Название: {{car.name}} </h4>
+    <p class="list-group-item-text">Год: {{car.year}}</p>
+  </app-car>
+</div>
