@@ -6,14 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent {
-  cars = ['BMW', 'FORD', 'Audi'];
-  items = [{ id: 1, name: 'Eduard' }, { id: 2, name: 'Vasya' }];
-  carName = '';
+  cars = [
+    {
+      name: 'Mazda',
+      year: 2015
+    },
+    {
+      name: 'BMW',
+      year: 2000
+    },
+    {
+      name: 'Audi',
+      year: 2017
+    }
+  ];
 
-  checkCar = false;
-
-  addCar() {
-    this.cars.push(this.carName);
-    this.carName = '';
+  updateCarList(car: { name: string; year: number }) {
+    this.cars.push(car);
   }
 }
