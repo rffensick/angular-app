@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -6,11 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
-  items = [1, 2, 3, 4, 5];
-  current = null;
+  inputSearch = '';
+  asyncTitle = Observable.of('asyncTitle 3 seconds').delay(3000);
+  cars = [
+    { name: 'Mazda' },
+    { name: 'Ford' },
+    { name: 'Benz' },
+    { name: 'Tesla' },
+    { name: 'Bently' }
+  ];
 
-  onClick(item: number) {
-    this.current = item;
+  addCar() {
+    this.cars.push({ name: 'New Car' });
   }
 }

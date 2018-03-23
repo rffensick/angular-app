@@ -1,28 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-
+    <div class="col-8">
+      <span>Search...</span>
+      <input [(ngModel)]="inputSearch" class="form-control" type="text">
+      <hr>
+      <button (click)="addCar()" class="btn btn-primary">Добавить машину</button>
+      <hr>
       <ul class="list-group">
-        <li (click)="onClick(item)" *ngFor="let item of items" class="list-group-item">
-          {{item}}
+        <li *ngFor="let car of cars | appSearch:inputSearch; let index = index" class="list-group-item">
+          <b> {{ index + 1 }} </b> =
+          <b> {{ car.name }} </b>
         </li>
       </ul>
-
-      <span [ngSwitch]="current">
-        <p *ngSwitchCase="1">
-          1
-        </p>
-        <p *ngSwitchCase="2">
-          2
-        </p>
-        <p *ngSwitchCase="3">
-          3
-        </p>
-        <p *ngSwitchDefault>
-          default
-        </p>
-      </span>
-
+      <h1> {{ asyncTitle | async }} </h1>
     </div>
   </div>
 </div>
