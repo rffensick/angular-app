@@ -8,17 +8,25 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  inputSearch = '';
-  asyncTitle = Observable.of('asyncTitle 3 seconds').delay(3000);
   cars = [
-    { name: 'Mazda' },
-    { name: 'Ford' },
-    { name: 'Benz' },
-    { name: 'Tesla' },
-    { name: 'Bently' }
+    {
+      name: 'Ford',
+      isSolid: true
+    },
+    {
+      name: 'Mazda',
+      isSolid: true
+    },
+    {
+      name: 'BWM',
+      isSolid: true
+    }
   ];
 
-  addCar() {
-    this.cars.push({ name: 'New Car' });
+  addCarToList(name: string) {
+    this.cars.push({
+      name,
+      isSolid: true
+    });
   }
 }

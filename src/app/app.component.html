@@ -1,18 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <span>Search...</span>
-      <input [(ngModel)]="inputSearch" class="form-control" type="text">
-      <hr>
-      <button (click)="addCar()" class="btn btn-primary">Добавить машину</button>
-      <hr>
-      <ul class="list-group">
-        <li *ngFor="let car of cars | appSearch:inputSearch; let index = index" class="list-group-item">
-          <b> {{ index + 1 }} </b> =
-          <b> {{ car.name }} </b>
-        </li>
-      </ul>
-      <h1> {{ asyncTitle | async }} </h1>
-    </div>
+<div class="col-8">
+  <app-car-add (onCarAdd)="addCarToList($event)"></app-car-add>
+  <hr>
+  <div class="list-group">
+    <app-car *ngFor="let car of cars" [car]="car"></app-car>
   </div>
 </div>
