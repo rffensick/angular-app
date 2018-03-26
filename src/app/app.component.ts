@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import 'rxjs/Rx';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -8,25 +6,14 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  cars = [
+  answers = [
     {
-      name: 'Ford',
-      isSolid: true
+      type: 'yes',
+      text: 'Да'
     },
     {
-      name: 'Mazda',
-      isSolid: true
-    },
-    {
-      name: 'BWM',
-      isSolid: true
+      type: 'no',
+      text: 'Нет'
     }
   ];
-
-  addCarToList(name: string) {
-    this.cars.push({
-      name,
-      isSolid: true
-    });
-  }
 }

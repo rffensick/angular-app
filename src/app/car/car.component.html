@@ -1,7 +1,0 @@
-<div [ngClass]="getClass()">
-  <h4 [ngStyle]="{marginBottom: '20px'}">{{car.name}}</h4>
-  <div>
-    <button [disabled]="!car.isSolid" (click)="onAction('buy')" class="btn btn-primary">Купить</button>
-    <button [disabled]="car.isSolid" (click)="onAction('return')" class="btn btn-default">Вернуть</button>
-  </div>
-</div>
